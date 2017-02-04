@@ -1,9 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-/// MouseLook rotates the transform based on the mouse delta.
-/// Minimum and Maximum values can be used to constrain the possible rotation
-
 /// To make an FPS style character:
 /// - Create a capsule.
 /// - Add the MouseLook script to the capsule.
