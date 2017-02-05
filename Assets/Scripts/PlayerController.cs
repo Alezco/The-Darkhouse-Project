@@ -66,25 +66,30 @@ public class PlayerController : MonoBehaviour {
     {
         if (moving)
         {
+            print("moving");
             float rotation = Camera.main.gameObject.transform.eulerAngles.z;
             if (left)
             {
+                print("left");
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, 0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation > 2)
+                if (rotation > 0)
                 {
+                    print("on rotate 1");
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = false;
                 }
             }
             else
             {
+                print("right");
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, -0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation < 358)
+                if (rotation < 0)
                 {
+                    print("on rotate 2");
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = true;
                 }
@@ -92,6 +97,7 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
+            print("no moving");
             Camera.main.gameObject.transform.Rotate(0, 0, -Camera.main.gameObject.transform.eulerAngles.z);
         }
     }
