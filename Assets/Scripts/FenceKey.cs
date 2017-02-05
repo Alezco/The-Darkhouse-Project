@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FenceLever : MonoBehaviour {
+public class FenceKey : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         print("Enter !");
