@@ -26,10 +26,7 @@ public class PlayerController : MonoBehaviour {
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed;
-            }
-               
+                moveDirection.y = jumpSpeed;               
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
@@ -51,8 +48,6 @@ public class PlayerController : MonoBehaviour {
 
     void actualizeState(AudioSource audio)
     {
-       
-        
         if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && !moving)
         {
             if (!audio.isPlaying)
@@ -77,7 +72,7 @@ public class PlayerController : MonoBehaviour {
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, 0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation > 3)
+                if (rotation > 2)
                 {
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = false;
@@ -88,7 +83,7 @@ public class PlayerController : MonoBehaviour {
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, -0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation < 357)
+                if (rotation < 358)
                 {
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = true;
