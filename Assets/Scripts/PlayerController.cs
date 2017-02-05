@@ -75,9 +75,9 @@ public class PlayerController : MonoBehaviour {
             if (left)
             {
                 print(Camera.main.gameObject.transform.eulerAngles.z);
-                Camera.main.gameObject.transform.Rotate(0, 0, 0.5F);
+                Camera.main.gameObject.transform.Rotate(0, 0, 0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation > 5)
+                if (rotation > 3)
                 {
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = false;
@@ -86,9 +86,9 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 print(Camera.main.gameObject.transform.eulerAngles.z);
-                Camera.main.gameObject.transform.Rotate(0, 0, -0.5F);
+                Camera.main.gameObject.transform.Rotate(0, 0, -0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
-                if (rotation < 355)
+                if (rotation < 357)
                 {
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = true;
