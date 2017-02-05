@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour {
         {
             actualizeSpeed();
             actualizeState(audio);
-            rotateHead();
+            crouchPlayer();
+            //rotateHead();
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
@@ -66,30 +67,25 @@ public class PlayerController : MonoBehaviour {
     {
         if (moving)
         {
-            print("moving");
             float rotation = Camera.main.gameObject.transform.eulerAngles.z;
             if (left)
             {
-                print("left");
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, 0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
                 if (rotation > 0)
                 {
-                    print("on rotate 1");
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = false;
                 }
             }
             else
             {
-                print("right");
                 print(Camera.main.gameObject.transform.eulerAngles.z);
                 Camera.main.gameObject.transform.Rotate(0, 0, -0.1F);
                 rotation = Camera.main.gameObject.transform.eulerAngles.z;
                 if (rotation < 0)
                 {
-                    print("on rotate 2");
                     Camera.main.gameObject.transform.Rotate(0, 0, -rotation);
                     left = true;
                 }
@@ -97,8 +93,23 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            print("no moving");
             Camera.main.gameObject.transform.Rotate(0, 0, -Camera.main.gameObject.transform.eulerAngles.z);
+        }
+    }
+
+    void crouchPlayer()
+    {
+        Vector3 actualSize = transform.localScale;
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            speed /= 2;
+            transform.localScale -= new Vector3(actualSize.x / 2, actualSize.y / 2, actualSize.z / 2);
+        }
+            
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            speed *= 2;
+            transform.localScale += new Vector3(actualSize.x, actualSize.y, actualSize.z);
         }
     }
 }
