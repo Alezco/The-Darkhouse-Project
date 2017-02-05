@@ -3243,6 +3243,7 @@ GameObject:
   - component: {fileID: 686242444}
   - component: {fileID: 686242443}
   - component: {fileID: 686242442}
+  - component: {fileID: 686242446}
   m_Layer: 0
   m_Name: FenceLever
   m_TagString: Lever
@@ -3313,6 +3314,17 @@ Transform:
   m_Father: {fileID: 262197775}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686242446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686242441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218be9611609a5849ab55ebe1b880d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689993071 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: b544816461f324e56a39767fdeb5b114, type: 2}
@@ -4018,7 +4030,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469019990}
   m_LocalRotation: {x: 0.123771064, y: 0.86194986, z: 0.42149663, w: -0.25310832}
-  m_LocalPosition: {x: 140.15619, y: -1250.9022, z: 190.7952}
+  m_LocalPosition: {x: 36.587788, y: -18.103697, z: 29.344873}
   m_LocalScale: {x: 0.100000024, y: 0.3643449, z: 0.23565508}
   m_Children: []
   m_Father: {fileID: 222450060}
