@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour {
 
     private bool running = false;
     private bool moving = false;
-
     private bool left = false;
 
     void Update () {
         CharacterController controller = GetComponent<CharacterController>();
+      
 
         if (controller.isGrounded)
         {
@@ -49,12 +49,18 @@ public class PlayerController : MonoBehaviour {
 
     void actualizeState()
     {
+        AudioSource audio = GetComponent<AudioSource>();
+        
         if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.D)) && !moving)
         {
+            if (!audio.isPlaying)
+                audio.Play();
             moving = true;
         }
         if ((Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.D)) && moving)
         {
+            if (audio.isPlaying)
+                audio.Stop();
             moving = false;
         }
     }
