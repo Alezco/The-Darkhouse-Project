@@ -11,15 +11,18 @@ public class PlayerController : MonoBehaviour {
 
     private bool running = false;
     private bool moving = false;
+    private bool crouching = false;
     private bool left = false;
 
     void Update () {
         AudioSource audio = GetComponent<AudioSource>();
         CharacterController controller = GetComponent<CharacterController>();
+        print("Size = " + transform.localScale.x);
+        print("speed = " + speed);
         if (controller.isGrounded)
         {
-            actualizeSpeed();
             actualizeState(audio);
+            runPlayer();
             crouchPlayer();
             //rotateHead();
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -31,20 +34,6 @@ public class PlayerController : MonoBehaviour {
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
-    }
-
-    void actualizeSpeed()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !running)
-        {
-            speed *= 2;
-            running = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && running)
-        {
-            speed /= 2;
-            running = false;
-        }
     }
 
     void actualizeState(AudioSource audio)
@@ -100,16 +89,33 @@ public class PlayerController : MonoBehaviour {
     void crouchPlayer()
     {
         Vector3 actualSize = transform.localScale;
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !crouching && !running)
         {
             speed /= 2;
             transform.localScale -= new Vector3(actualSize.x / 2, actualSize.y / 2, actualSize.z / 2);
+            crouching = true;
         }
             
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl) && crouching)
         {
             speed *= 2;
             transform.localScale += new Vector3(actualSize.x, actualSize.y, actualSize.z);
+            crouching = false;
+        }
+      
+    }
+
+    void runPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !crouching && !running)
+        {
+            speed *= 2;
+            running = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) && running)
+        {
+            speed /= 2;
+            running = false;
         }
     }
 }
