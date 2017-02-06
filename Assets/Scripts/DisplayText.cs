@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DisplayText : MonoBehaviour {
     public int displayTime;
+    public string text;
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,8 +13,8 @@ public class DisplayText : MonoBehaviour {
 
     IEnumerator handleText()
     {
-        GameObject.Find("Player/Canvas/JumpText").active = true;
+        GameObject.Find(text).active = true;
         yield return new WaitForSeconds(displayTime);
-        GameObject.Find("Player/Canvas/JumpText").active = false;
+        GameObject.Find(text).active = false;
     }
 }
