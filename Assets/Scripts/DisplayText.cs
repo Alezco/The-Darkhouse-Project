@@ -6,7 +6,7 @@ public class DisplayText : MonoBehaviour {
     public int displayTime;
     public string text;
 
-    void OnStart(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         StartCoroutine(handleText());
     }

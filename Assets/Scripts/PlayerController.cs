@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         AudioSource audio = GetComponent<AudioSource>();
         CharacterController controller = GetComponent<CharacterController>();
-        print("Size = " + transform.localScale.x);
-        print("speed = " + speed);
+        // print("Size = " + transform.localScale.x);
+        // print("speed = " + speed);
         if (controller.isGrounded)
         {
             actualizeState(audio);
