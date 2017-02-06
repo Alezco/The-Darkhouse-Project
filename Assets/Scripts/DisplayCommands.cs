@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayText : MonoBehaviour {
+public class DisplayCommands : MonoBehaviour {
     public int displayTime;
-    public string text;
 
-    void OnStart(Collider other)
-    {
+    // Use this for initialization
+    void Start () {
         StartCoroutine(handleText());
     }
 
     IEnumerator handleText()
     {
-        GameObject.Find(text).active = true;
+        this.gameObject.active = true;
         yield return new WaitForSeconds(displayTime);
-        GameObject.Find(text).active = false;
+        this.gameObject.active = false;
     }
 }
