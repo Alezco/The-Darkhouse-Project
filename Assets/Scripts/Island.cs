@@ -5,5 +5,6 @@ using UnityEngine;
 public class Island : MonoBehaviour {
 	void Start () {
         GameObject.Find("Player/Canvas/JumpText").active = false;
+        GameObject.Find("Player/Canvas/CrouchText").active = false;
     }
 }
