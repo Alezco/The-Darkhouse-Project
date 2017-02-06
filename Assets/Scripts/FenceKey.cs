@@ -5,8 +5,7 @@ using UnityEngine;
 public class FenceKey : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
-        print("Enter !");
         Destroy(gameObject);
-        Destroy(GameObject.Find("Island/Lighthouse/Fence"));
+        PlayerInventory.getInstance().getInventory().Add("FenceKey");
     }
 }
