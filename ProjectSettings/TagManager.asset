@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lever
   - Enemy
+  - WellPlanks
   layers:
   - Default
   - TransparentFX
