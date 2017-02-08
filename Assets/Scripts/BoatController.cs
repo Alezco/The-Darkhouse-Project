@@ -20,7 +20,7 @@ public class BoatController : MonoBehaviour {
 
     void lookAtEnemy()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.V))
             Camera.main.gameObject.transform.LookAt(GameObject.FindWithTag("Enemy").transform);
         else
             Camera.main.gameObject.transform.LookAt(transform);

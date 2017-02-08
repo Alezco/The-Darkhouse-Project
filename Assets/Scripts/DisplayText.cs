@@ -8,7 +8,8 @@ public class DisplayText : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(handleText());
+        if (other.gameObject.CompareTag("Player"))
+            StartCoroutine(handleText());
     }
 
     IEnumerator handleText()
