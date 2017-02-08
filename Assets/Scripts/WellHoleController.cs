@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WellHoleController : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Scenes/UndergroundScene");
+        if (other.CompareTag("Player"))
+            SceneManager.LoadScene("Scenes/UndergroundScene");
     }
 }
