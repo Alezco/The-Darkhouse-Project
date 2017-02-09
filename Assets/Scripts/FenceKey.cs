@@ -8,6 +8,7 @@ public class FenceKey : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        GameObject.Find("Player/Canvas/HUDKey").SetActive(true);
         PlayerInventory.getInstance().getInventory().Add("FenceKey");
     }
 

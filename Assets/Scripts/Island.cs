@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Island : MonoBehaviour {
 	void Start () {
-        GameObject.Find("Player/Canvas/JumpText").active = false;
-        GameObject.Find("Player/Canvas/CrouchText").active = false;
+        GameObject.Find("Player/Canvas/JumpText").SetActive(false);
+        GameObject.Find("Player/Canvas/CrouchText").SetActive(false);
+        GameObject.Find("Player/Canvas/HUDKey").SetActive(false);
     }
 }
