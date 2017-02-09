@@ -10,4 +10,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LighthouseScene.unity
   - enabled: 1
-    path: Assets/Scenes/UndergoundScene.unity
+    path: Assets/Scenes/UndergroundScene.unity
