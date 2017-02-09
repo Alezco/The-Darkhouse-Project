@@ -14,14 +14,17 @@ public class PlayerController : MonoBehaviour {
     private bool crouching = false;
     private bool left = false;
 
+    void OnStart()
+    {
+        
+    }
+
     void Update () {
         AudioSource audio = GetComponent<AudioSource>();
         CharacterController controller = GetComponent<CharacterController>();
-        // print("Size = " + transform.localScale.x);
-        // print("speed = " + speed);
+        actualizeState(audio, controller);
         if (controller.isGrounded)
-        {
-            actualizeState(audio);
+        {   
             runPlayer();
             crouchPlayer();
             //rotateHead();
@@ -36,19 +39,16 @@ public class PlayerController : MonoBehaviour {
         controller.Move(moveDirection * Time.deltaTime);
     }
 
-    void actualizeState(AudioSource audio)
+    void actualizeState(AudioSource audio, CharacterController controller)
     {
-        if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && !moving)
+        if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.S)) && controller.isGrounded)
         {
             if (!audio.isPlaying)
                 audio.Play();
-            moving = true;
         }
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && moving)
+        else
         {
-            if (audio.isPlaying)
-                audio.Stop();
-            moving = false;
+            audio.Stop();
         }
     }
 
