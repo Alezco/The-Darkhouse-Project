@@ -15,14 +15,17 @@ public class DebrisController : MonoBehaviour {
         isTouched = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
-        bc.isTrigger = false;
-        isTouched = true;
-        print("lol");
-        
-        Rigidbody rb = GetComponent<Rigidbody>();
-        //rb.useGravity = true;
+
+        if (collider.gameObject.CompareTag("Player") && PlayerInventory.getInstance().getInventory().Contains("Crowbar"))
+        {
+            bc.isTrigger = false;
+            isTouched = true;
+            GameObject.Find("Player/Canvas/HUDCrowbar").SetActive(false);
+            Rigidbody rb = GetComponent<Rigidbody>();
+        }
+   
     }
 
     void OnCollisionEnter(Collision collision)

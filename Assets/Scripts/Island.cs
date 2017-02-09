@@ -7,5 +7,6 @@ public class Island : MonoBehaviour {
         GameObject.Find("Player/Canvas/JumpText").SetActive(false);
         GameObject.Find("Player/Canvas/CrouchText").SetActive(false);
         GameObject.Find("Player/Canvas/HUDKey").SetActive(false);
+        GameObject.Find("Player/Canvas/HUDCrowbar").SetActive(false);
     }
 }
