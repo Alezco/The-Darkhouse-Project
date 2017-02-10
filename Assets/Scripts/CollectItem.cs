@@ -8,6 +8,11 @@ public class CollectItem : MonoBehaviour {
     public string path;
     public string item;
 
+    void Start()
+    {
+        GameObject.Find(path).SetActive(false);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

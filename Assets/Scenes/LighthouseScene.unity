@@ -5883,8 +5883,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469019990}
-  m_LocalRotation: {x: -0.020045819, y: 0.9413652, z: 0.056842342, w: 0.3319619}
-  m_LocalPosition: {x: 27.791527, y: -11.499397, z: 28.196795}
+  m_LocalRotation: {x: -0.050101023, y: 0.21373244, z: 0.010976211, w: 0.97554487}
+  m_LocalPosition: {x: 28.755783, y: -140.07576, z: 14.027536}
   m_LocalScale: {x: 0.100000024, y: 0.3643449, z: 0.23565508}
   m_Children: []
   m_Father: {fileID: 222450060}
@@ -6903,7 +6903,6 @@ GameObject:
   - component: {fileID: 1885568155}
   - component: {fileID: 1885568154}
   - component: {fileID: 1885568158}
-  - component: {fileID: 1885568159}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -6992,17 +6991,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1885568159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1885568153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be72382d8c3e801418da5f1a0906d171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1914739503
 Prefab:
   m_ObjectHideFlags: 0
