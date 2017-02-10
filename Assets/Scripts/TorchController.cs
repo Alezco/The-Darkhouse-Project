@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TorchController : MonoBehaviour {
 
+    public Texture texture;
+
 	void OnTriggerEnter(Collider other)
     {
-        Texture3D texture = (Texture3D) Resources.Load("Textures/fire");
-        gameObject.GetComponent<Renderer>().material.mainTexture = texture;
+        if (PlayerInventory.getInstance().getInventory().Contains("Lighter"))
+            gameObject.GetComponent<Renderer>().material.mainTexture = texture;
     }
 }
