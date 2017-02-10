@@ -12,9 +12,9 @@ public class DisplayCommands : MonoBehaviour {
 
     IEnumerator handleText()
     {
-        GameObject.Find("Boat/Canvas/ReachBoundariesText").active = false;
-        this.gameObject.active = true;
+        GameObject.Find("Boat/Canvas/ReachBoundariesText").SetActive(false);
+        this.gameObject.SetActive(true);
         yield return new WaitForSeconds(displayTime);
-        this.gameObject.active = false;
+        this.gameObject.SetActive(false);
     }
 }

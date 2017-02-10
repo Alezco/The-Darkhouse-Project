@@ -23,14 +23,13 @@ public class DebrisController : MonoBehaviour {
             bc.isTrigger = false;
             isTouched = true;
             GameObject.Find("Player/Canvas/HUDCrowbar").SetActive(false);
-            Rigidbody rb = GetComponent<Rigidbody>();
         }
    
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.other.CompareTag("WellPlanks"))
+        if (collision.collider.gameObject.CompareTag("WellPlanks"))
         {
             Destroy(GameObject.Find("Island/Well/WellPlanks"));
             Destroy(gameObject);
