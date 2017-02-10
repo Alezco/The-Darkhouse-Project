@@ -1021,7 +1021,7 @@ ParticleSystem:
   m_GameObject: {fileID: 445548080}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -4494,18 +4494,29 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: b544816461f324e56a39767fdeb5b114, type: 2}
   m_PrefabInternal: {fileID: 1153545303}
---- !u!135 &689993074
-SphereCollider:
+--- !u!114 &689993072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 689993071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650d1d6256389f8489d335178e58553e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &689993074
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689993071}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 142.3517, y: 35.510895, z: 143.17693}
+  m_Center: {x: 24.666573, y: -26.09291, z: 24.980366}
 --- !u!1 &724498905
 GameObject:
   m_ObjectHideFlags: 0
@@ -5884,8 +5895,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469019990}
-  m_LocalRotation: {x: -0.083974175, y: -0.7883148, z: 0.110436924, w: -0.59942627}
-  m_LocalPosition: {x: 26.80368, y: -0.97609717, z: 29.431131}
+  m_LocalRotation: {x: -0.10804898, y: 0.516989, z: 0.06597973, w: 0.8465781}
+  m_LocalPosition: {x: 4.612991, y: -175.40302, z: 15.227302}
   m_LocalScale: {x: 0.100000024, y: 0.3643449, z: 0.23565508}
   m_Children: []
   m_Father: {fileID: 222450060}
