@@ -5,7 +5,6 @@ using UnityEngine;
 public class DisplayCommands : MonoBehaviour {
     public int displayTime;
 
-    // Use this for initialization
     void Start () {
         StartCoroutine(handleText());
     }

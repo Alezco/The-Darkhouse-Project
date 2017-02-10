@@ -6,14 +6,8 @@ public class ChestController : MonoBehaviour {
 
     public Camera finalCamera;
 
-	// Use this for initialization
 	void Start () {
         finalCamera.gameObject.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
     void OnTriggerEnter(Collider collider)

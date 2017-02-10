@@ -9,13 +9,11 @@ public class EnemyController : MonoBehaviour
 
     private Transform playerTransform;
 
-    // Use this for initialization
     void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         catchPlayer();
@@ -25,17 +23,12 @@ public class EnemyController : MonoBehaviour
     {
         transform.LookAt(playerTransform);
         if (Vector3.Distance(transform.position, playerTransform.position) >= 0)
-        {
             transform.position += transform.forward * speed;
-        }
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Player"))
-        {
             SceneManager.LoadScene("Scenes/BoatScene");
-        }
-        
     }
 }

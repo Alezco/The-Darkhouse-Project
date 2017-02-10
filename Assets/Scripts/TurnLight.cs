@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TurnLight : MonoBehaviour {
 	
-	// Update is called once per frame
 	void Update () {
         transform.Rotate(0, 1, 0);
 	}

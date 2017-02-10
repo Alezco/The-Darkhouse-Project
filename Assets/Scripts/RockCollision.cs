@@ -8,9 +8,6 @@ public class RockCollision : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
             SceneManager.LoadScene("Scenes/LighthouseScene");
-        }
-     
     }
 }

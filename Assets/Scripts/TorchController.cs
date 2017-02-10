@@ -18,6 +18,5 @@ public class TorchController : MonoBehaviour {
             remaining.text = count.ToString();
             gameObject.GetComponent<Renderer>().material.mainTexture = texture;
         }
-           
     }
 }

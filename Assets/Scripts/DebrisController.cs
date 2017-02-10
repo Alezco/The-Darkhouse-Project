@@ -17,14 +17,12 @@ public class DebrisController : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-
         if (collider.gameObject.CompareTag("Player") && PlayerInventory.getInstance().getInventory().Contains("Crowbar"))
         {
             bc.isTrigger = false;
             isTouched = true;
             GameObject.Find("Player/Canvas/HUDCrowbar").SetActive(false);
         }
-   
     }
 
     void OnCollisionEnter(Collision collision)
