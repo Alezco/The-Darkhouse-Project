@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour {
+public class PlayerInventory {
     private static PlayerInventory instance = new PlayerInventory();
 
     ArrayList inventory;
