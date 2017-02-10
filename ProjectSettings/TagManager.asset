@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - WellPlanks
   - WellHole
+  - Cube
   layers:
   - Default
   - TransparentFX
