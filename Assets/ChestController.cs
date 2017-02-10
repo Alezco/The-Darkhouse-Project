@@ -20,7 +20,6 @@ public class ChestController : MonoBehaviour {
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            print("opzae");
             finalCamera.gameObject.SetActive(true);
             collider.gameObject.SetActive(false);
         }
