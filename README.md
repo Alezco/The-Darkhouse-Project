@@ -1,2 +1,3 @@
-# The-Darkhouse-Project
-Unity video game
+# TheDarkhouse
+
+Puzzle and exploration video game developed with Unity
